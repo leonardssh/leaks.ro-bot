@@ -11,8 +11,7 @@ module.exports = class extends Command {
 			guarded: true,
 			description: 'Displays bot stats.',
 			aliases: ['botinfo', 'binfo', 'botstats', 'bstats'],
-			requiredPermissions: ['EMBED_LINKS'],
-			category: 'General'
+			requiredPermissions: ['EMBED_LINKS']
 		});
 	}
 
