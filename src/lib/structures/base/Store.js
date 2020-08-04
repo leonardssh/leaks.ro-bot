@@ -1,5 +1,6 @@
 const { Collection } = require('discord.js');
 const { join, extname, relative, sep } = require('path');
+const { isClass } = require('@klasa/utils');
 const fs = require('fs-nextra');
 
 class Store extends Collection {
@@ -60,10 +61,8 @@ class Store extends Collection {
 
 		try {
 			const Piece = (req => req.default || req)(require(filePath));
-			const is_class =
-				typeof Piece === 'function' && typeof Piece.prototype === 'object' && Piece.toString().substring(0, 5) === 'class';
 
-			if (!is_class) {
+			if (!isClass(Piece)) {
 				throw new TypeError('The exported structure is not a class.');
 			}
 

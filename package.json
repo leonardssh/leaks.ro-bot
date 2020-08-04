@@ -23,6 +23,7 @@
 	},
 	"homepage": "https://github.com/Leaks-Romania/leaks.ro-rewrite#readme",
 	"dependencies": {
+		"@klasa/utils": "^0.1.0",
 		"chalk": "^4.1.0",
 		"discord.js": "^12.2.0",
 		"fs-nextra": "^0.5.1",
