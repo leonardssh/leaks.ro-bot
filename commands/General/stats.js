@@ -8,7 +8,6 @@ require('moment-duration-format');
 module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
-			guarded: true,
 			description: 'Displays bot stats.',
 			aliases: ['botinfo', 'binfo', 'botstats', 'bstats'],
 			requiredPermissions: ['EMBED_LINKS']
