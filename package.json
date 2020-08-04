@@ -4,13 +4,8 @@
 	"description": "Created especially for the Leaks Romania community.",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"_moduleAliases": {
-		"@root": ".",
-		"@lks/lib": "src/lib/",
-		"@lks/logger": "src/lib/logger",
-		"@lks/structures/base": "src/lib/structures/base"
+		"dev": "nodemon index.js",
+		"prod": "node index.js"
 	},
 	"repository": {
 		"type": "git",
@@ -23,11 +18,10 @@
 	},
 	"homepage": "https://github.com/Leaks-Romania/leaks.ro-rewrite#readme",
 	"dependencies": {
-		"chalk": "^4.1.0",
+		"common-tags": "^1.8.0",
 		"discord.js": "^12.2.0",
-		"fs-nextra": "^0.5.1",
-		"module-alias": "^2.2.2",
-		"moment": "^2.27.0"
+		"dotenv": "^8.2.0",
+		"klasa": "^0.5.0"
 	},
 	"prettier": {
 		"endOfLine": "lf",
