@@ -39,8 +39,10 @@ module.exports = class extends Monitor {
 
 		try {
 			await this.client.inhibitors.run(message, message.command);
+
 			try {
 				await message.prompter.run();
+
 				try {
 					const subcommand = message.command.subcommands ? message.params.shift() : undefined;
 					const commandRun = subcommand
@@ -62,6 +64,7 @@ module.exports = class extends Monitor {
 		} catch (response) {
 			this.client.emit('commandInhibited', message, message.command, response);
 		}
+
 		if (this.client.options.typing) {
 			message.channel.stopTyping();
 		}
