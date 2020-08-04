@@ -27,7 +27,7 @@ module.exports = class extends Command {
 
 		message.sendEmbed(
 			new MessageEmbed()
-				.setColor('#008dff')
+				.setColor('#43b581')
 				.setDescription(`<:valet_yeah:716348838289342496> I found ${commands.length} commands containing **${keyword}**.`)
 				.addField('Commands:', `\`\`\`diff\n${commands.join('\n')}\`\`\``)
 				.addField(':grey_question: Want more details?', `Use \`help [Command]\` for more details about a specific command.`)
