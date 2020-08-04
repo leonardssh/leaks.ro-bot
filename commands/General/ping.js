@@ -10,7 +10,7 @@ module.exports = class extends Command {
 	}
 
 	async run(message) {
-		message.sendEmbed(new MessageEmbed().setColor('#36393f').setTitle(`Latency and API response times.`)).then(m =>
+		message.sendEmbed(new MessageEmbed().setColor('#008dff').setTitle(`Latency and API response times.`)).then(m =>
 			m.edit(
 				new MessageEmbed()
 					.setColor('#008dff')
