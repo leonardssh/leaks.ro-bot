@@ -1,5 +1,5 @@
-const { Command } = require('klasa');
-const { MessageEmbed, version } = require('discord.js');
+const { Command, version: klasaVersion } = require('klasa');
+const { MessageEmbed, version: discordVersion } = require('discord.js');
 const { stripIndents } = require('common-tags');
 
 const moment = require('moment');
@@ -39,7 +39,8 @@ module.exports = class extends Command {
 						1024 ** 2
 					).toFixed(2)} MB\n\
                 **Platform:** ${platformName[require('os').platform()]}\n\
-                **Discord.js:** v${version}\n\
+                **Klasa:** v${klasaVersion}\n\
+                **Discord.js:** v${discordVersion}\n\
                 **NodeJS: **${process.version}\n\
                 **Developer:** [Leonard#6666](https://leonard.pw)`,
 					true
