@@ -6,7 +6,6 @@ const {
 module.exports = {
 	permissionLevels: new PermissionLevels()
 		.add(0, () => true)
-
 		.add(6, ({ guild, member }) => member._roles.includes(guild.settings.moderator), {
 			fetch: true
 		})
