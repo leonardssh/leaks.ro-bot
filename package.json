@@ -1,0 +1,37 @@
+{
+	"name": "leaks.ro-rewrite",
+	"version": "1.0.0",
+	"description": "Created especially for the Leaks Romania community.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"_moduleAliases": {
+		"@root": "."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Leaks-Romania/leaks.ro-rewrite.git"
+	},
+	"author": "LeonardSSH <leonardssh22@gmail.com> (https://leonard.pw)",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Leaks-Romania/leaks.ro-rewrite/issues"
+	},
+	"homepage": "https://github.com/Leaks-Romania/leaks.ro-rewrite#readme",
+	"dependencies": {
+		"discord.js": "^12.2.0",
+		"module-alias": "^2.2.2"
+	},
+	"prettier": {
+		"endOfLine": "lf",
+		"printWidth": 140,
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "none",
+		"useTabs": true,
+		"arrowParens": "avoid"
+	}
+}
