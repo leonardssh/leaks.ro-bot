@@ -4,6 +4,12 @@ const { BOT_TOKEN, ENVIRONMENT } = process.env;
 const { Client, Schema } = require('klasa');
 
 const client = new Client({
+	presence: {
+		activity: {
+			name: 'leaks help | @leaks',
+			type: 'LISTENING'
+		}
+	},
 	fetchAllMembers: false,
 	prefix: ['leaks', 'pls', 'leo pls', 'kenn pls', 'views pls', 'emrys pls', 'krusher pls'],
 	commandEditing: true,
