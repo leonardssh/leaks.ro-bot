@@ -13,6 +13,7 @@ module.exports = {
 				.add('antiInvite', 'boolean', { default: false })
 				.add('muted', 'role')
 				.add('moderator', 'role')
+				.add('filteredWords', 'string', { default: [], array: true })
 		}
 	}
 };
