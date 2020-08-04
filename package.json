@@ -3,10 +3,7 @@
 	"version": "1.0.0",
 	"description": "Created especially for the Leaks Romania community.",
 	"main": "index.js",
-	"scripts": {
-		"dev": "nodemon index.js",
-		"prod": "node index.js"
-	},
+	"scripts": {},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Leaks-Romania/leaks.ro-rewrite.git"
