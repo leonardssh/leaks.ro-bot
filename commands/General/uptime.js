@@ -7,7 +7,6 @@ require('moment-duration-format');
 module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
-			guarded: true,
 			aliases: ['up'],
 			description: 'Displays bot uptime.',
 			requiredPermissions: ['EMBED_LINKS']
