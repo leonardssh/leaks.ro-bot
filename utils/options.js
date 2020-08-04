@@ -1,5 +1,6 @@
 const { ENVIRONMENT } = process.env;
 const { gateways } = require('./gateways');
+const { permissionLevels } = require('./permissions');
 
 module.exports = {
 	presence: {
@@ -25,5 +26,6 @@ module.exports = {
 	},
 	disabledCorePieces: ['commands', 'languages'],
 	gateways,
+	permissionLevels,
 	readyMessage: client => `Successfully initialized. Ready to serve ${client.guilds.cache.size} guilds.`
 };
