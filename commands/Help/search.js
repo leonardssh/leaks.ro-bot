@@ -11,10 +11,10 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(message, [command]) {
-		command = command.toLowerCase();
+	async run(message, [keyword]) {
+		keyword = keyword.toLowerCase();
 
-		let commands = this.client.commands.map(c => c.name.toLowerCase()).filter(c => c.includes(command));
+		let commands = this.client.commands.map(c => c.name.toLowerCase()).filter(c => c.includes(keyword));
 
 		if (!commands.length) {
 			return message.sendEmbed(
@@ -29,7 +29,7 @@ module.exports = class extends Command {
 		message.sendEmbed(
 			new MessageEmbed()
 				.setColor('#008dff')
-				.setDescription(`<:valet_yeah:716348838289342496> I found ${commands.length} commands containing **${command}**.`)
+				.setDescription(`<:valet_yeah:716348838289342496> I found ${commands.length} commands containing **${keyword}**.`)
 				.addField('Commands:', `\`\`\`diff\n${commands.join('\n')}\`\`\``)
 				.addField(':grey_question: Want more details?', `Use \`help [Command]\` for more details about a specific command.`)
 		);
