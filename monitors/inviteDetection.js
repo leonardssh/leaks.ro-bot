@@ -10,19 +10,19 @@ module.exports = class extends Monitor {
 		});
 	}
 
-	async run(msg) {
-		if (!msg.guild || !msg.guild.settings.antiInvite) {
+	async run(message) {
+		if (!message.guild || !message.guild.settings.antiInvite) {
 			return null;
 		}
 
-		if (await msg.hasAtLeastPermissionLevel(7)) {
+		if (await message.hasAtLeastPermissionLevel(6)) {
 			return null;
 		}
 
-		if (!/(https?:\/\/)?(www\.)?(discord\.(com|gg|li|me|io)|discordapp\.com\/invite)\/.+/.test(msg.content)) {
+		if (!/(https?:\/\/)?(www\.)?(discord\.(com|gg|li|me|io)|discordapp\.com\/invite)\/.+/.test(message.content)) {
 			return null;
 		}
 
-		return msg.delete().catch(err => this.client.emit('log', err, 'error'));
+		return message.delete().catch(err => this.client.emit('log', err, 'error'));
 	}
 };
