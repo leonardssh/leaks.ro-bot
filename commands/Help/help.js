@@ -15,7 +15,7 @@ module.exports = class extends Command {
 			guarded: true,
 			description: 'Shows you the help center.',
 			usage: '(Command:command)',
-			requiredPermissions: ['EMBED_LINKS', 'MANAGE_MESSAGES']
+			requiredPermissions: ['EMBED_LINKS']
 		});
 
 		this.createCustomResolver('command', (arg, possible, message) => {
