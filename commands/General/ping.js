@@ -6,8 +6,7 @@ module.exports = class extends Command {
 		super(...args, {
 			guarded: true,
 			description: 'Latency and API response times.',
-			requiredPermissions: ['EMBED_LINKS'],
-			category: 'General'
+			requiredPermissions: ['EMBED_LINKS']
 		});
 	}
 
