@@ -31,6 +31,7 @@ module.exports = class extends Command {
 				new MessageEmbed()
 					.setTitle(`${name} command`)
 					.setColor('#008dff')
+					.setThumbnail(this.client.user.avatarURL({ dynamic: true, size: 2048, format: 'png' }))
 					.setDescription(isFunction(description) ? description(message.language) : description)
 					.addField('**__CATEGORY__**', category)
 					.addField('**__USAGE__**', `\`\`\`\n${usage.fullUsage(message)}\`\`\``)
