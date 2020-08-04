@@ -16,7 +16,7 @@ module.exports = class extends Command {
 		const file = join(...piece.file);
 		const fileLocation = resolve(piece.directory, file);
 
-		await fs.access(fileLocation).catch(() => {
+		await fs.pathExists(fileLocation).catch(() => {
 			throw message.language.get('COMMAND_TRANSFER_ERROR');
 		});
 
