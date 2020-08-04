@@ -6,8 +6,7 @@ module.exports = class extends Command {
 		super(...args, {
 			guarded: true,
 			description: 'Displays the avatar of the specified user.',
-			requiredPermissions: ['EMBED_LINKS'],
-			category: 'General'
+			requiredPermissions: ['EMBED_LINKS']
 		});
 	}
 
