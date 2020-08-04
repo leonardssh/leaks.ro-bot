@@ -8,7 +8,6 @@ const { stripIndents } = require('common-tags');
 module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
-			guarded: true,
 			description: 'Shows you the help center.',
 			usage: '(Command:command)',
 			requiredPermissions: ['EMBED_LINKS']
