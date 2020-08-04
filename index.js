@@ -1,9 +1,9 @@
 require('dotenv').config();
 
 const { BOT_TOKEN, ENVIRONMENT } = process.env;
-const { Client } = require('klasa');
+const { Client, Schema } = require('klasa');
 
-new Client({
+const client = new Client({
 	fetchAllMembers: false,
 	prefix: ['leaks', 'pls', 'leo pls', 'kenn pls', 'views pls', 'emrys pls', 'krusher pls'],
 	commandEditing: true,
@@ -20,5 +20,20 @@ new Client({
 		wtf: true
 	},
 	disabledCorePieces: ['commands', 'languages'],
+	gateways: {
+		guilds: {
+			schema: new Schema()
+				.add('disabledCommands', 'command', {
+					array: true,
+					filter: (client, command, piece, language) => {
+						if (command.guarded) throw language.get('COMMAND_CONF_GUARDED', command.name);
+					}
+				})
+				.add('antiInvite', 'boolean', { default: false })
+				.add('muted', 'role')
+		}
+	},
 	readyMessage: client => `Successfully initialized. Ready to serve ${client.guilds.cache.size} guilds.`
-}).login(BOT_TOKEN);
+});
+
+client.login(BOT_TOKEN);
