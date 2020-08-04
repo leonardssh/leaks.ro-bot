@@ -4,7 +4,6 @@ const { MessageEmbed } = require('discord.js');
 module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
-			guarded: true,
 			description: 'Latency and API response times.',
 			requiredPermissions: ['EMBED_LINKS']
 		});
