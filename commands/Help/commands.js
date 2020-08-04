@@ -12,7 +12,6 @@ module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
 			aliases: ['cmd', 'cmds'],
-			guarded: true,
 			description: 'Shows you help for all commands.',
 			requiredPermissions: ['EMBED_LINKS']
 		});
