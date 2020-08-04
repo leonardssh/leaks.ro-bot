@@ -4,7 +4,6 @@ const { MessageEmbed } = require('discord.js');
 module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
-			guarded: true,
 			description: 'Look for commands by keywords.',
 			usage: '<Keyword:str>',
 			requiredPermissions: ['EMBED_LINKS']
