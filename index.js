@@ -19,5 +19,6 @@ new Client({
 		warn: true,
 		wtf: true
 	},
+	disabledCorePieces: ['commands'],
 	readyMessage: client => `Successfully initialized. Ready to serve ${client.guilds.cache.size} guilds.`
 }).login(BOT_TOKEN);
