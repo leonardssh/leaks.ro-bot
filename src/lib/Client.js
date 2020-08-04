@@ -1,10 +1,13 @@
 const { Client } = require('discord.js');
+const { dirname } = require('path');
 
 const Logger = require('@lks/logger');
 
 class LeaksClient extends Client {
 	constructor(options = {}) {
 		super(options);
+
+		this.baseDirectory = dirname(require.main.filename);
 
 		this.logger = new Logger(this);
 	}
