@@ -7,7 +7,8 @@ module.exports = class extends Command {
 		super(...args, {
 			aliases: ['ginfo', 'serverinfo', 'sinfo', 'si', 'gi'],
 			description: 'Displays guild details.',
-			requiredPermissions: ['EMBED_LINKS']
+			requiredPermissions: ['EMBED_LINKS'],
+			runIn: ['text']
 		});
 	}
 
