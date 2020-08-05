@@ -10,7 +10,8 @@ module.exports = class extends Command {
 			guarded: true,
 			description: language => language.get('COMMAND_LOAD_DESCRIPTION'),
 			usage: '[core] <Store:store> <path:...string>',
-			usageDelim: ' '
+			usageDelim: ' ',
+			runIn: ['text', 'dm']
 		});
 
 		this.regExp = /\\\\?|\//g;
