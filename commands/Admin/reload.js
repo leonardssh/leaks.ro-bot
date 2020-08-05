@@ -7,7 +7,8 @@ module.exports = class extends Command {
 			permissionLevel: 10,
 			guarded: true,
 			description: language => language.get('COMMAND_RELOAD_DESCRIPTION'),
-			usage: '<Store:store|Piece:piece|everything:default>'
+			usage: '<Store:store|Piece:piece|everything:default>',
+			runIn: ['text', 'dm']
 		});
 	}
 
