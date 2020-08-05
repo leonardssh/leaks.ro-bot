@@ -121,7 +121,7 @@ module.exports = class extends Command {
 		}
 
 		if (!updated.length) {
-			message.sendEmbed(
+			return message.sendEmbed(
 				new MessageEmbed()
 					.setDescription(`<:valet_nope:716348860389261395> The value for **${key}** was already that value.`)
 					.setColor('#e74c3c')
