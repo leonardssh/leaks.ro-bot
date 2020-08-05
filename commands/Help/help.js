@@ -10,7 +10,8 @@ module.exports = class extends Command {
 		super(...args, {
 			description: 'Shows you the help center.',
 			usage: '(Command:command)',
-			requiredPermissions: ['EMBED_LINKS']
+			requiredPermissions: ['EMBED_LINKS'],
+			runIn: ['text', 'dm']
 		});
 
 		this.createCustomResolver('command', (arg, possible, message) => {
