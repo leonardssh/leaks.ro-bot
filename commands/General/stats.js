@@ -10,7 +10,8 @@ module.exports = class extends Command {
 		super(...args, {
 			description: 'Displays bot stats.',
 			aliases: ['botinfo', 'binfo', 'botstats', 'bstats'],
-			requiredPermissions: ['EMBED_LINKS']
+			requiredPermissions: ['EMBED_LINKS'],
+			runIn: ['text', 'dm']
 		});
 	}
 
