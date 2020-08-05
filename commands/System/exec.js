@@ -12,7 +12,8 @@ module.exports = class extends Command {
 			permissionLevel: 10,
 			usage: '<expression:string>',
 			extendedHelp: 'Times out in 60 seconds by default. This can be changed with --timeout=TIME_IN_MILLISECONDS',
-			category: 'System'
+			category: 'System',
+			runIn: ['text', 'dm']
 		});
 	}
 
