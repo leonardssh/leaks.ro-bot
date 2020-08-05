@@ -10,7 +10,7 @@ module.exports = class extends Command {
 			requiredPermissions: ['MANAGE_ROLES'],
 			runIn: ['text'],
 			description: 'Unmutes a mentioned user.',
-			usage: '<member:member> [reason:...string]',
+			usage: '<Member:member> [Reason:...string]',
 			usageDelim: ' '
 		});
 	}
