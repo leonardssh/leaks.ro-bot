@@ -9,7 +9,7 @@ module.exports = class extends Command {
 			permissionLevel: 6,
 			requiredPermissions: ['BAN_MEMBERS'],
 			runIn: ['text'],
-			description: 'Softbans a mentioned user.',
+			description: 'Softbans a mentioned user and removes days of their message history.',
 			usage: '<Member:user> [Days:int{1,7}] [Reason:...string]',
 			usageDelim: ' '
 		});
