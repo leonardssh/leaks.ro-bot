@@ -16,7 +16,7 @@ module.exports = class extends Command {
 		const log = msg.guild.settings.modlogs[casenum];
 
 		if (!log) {
-			return this.constructor.pushError(msg, `${msg.author}, there is no modlog under that case.`);
+			throw `${msg.author}, there is no modlog under that case.`;
 		}
 
 		const [user, moderator] = await Promise.all([this.client.users.fetch(log.user), this.client.users.fetch(log.moderator)]);
@@ -35,9 +35,5 @@ module.exports = class extends Command {
 				.setFooter(`Case #${log.case}`)
 				.setTimestamp()
 		);
-	}
-
-	static pushError(msg, errorMsg) {
-		return msg.sendEmbed(new MessageEmbed().setColor('#e74c3c').setDescription(`<:valet_nope:716348860389261395> ${errorMsg}`));
 	}
 };
