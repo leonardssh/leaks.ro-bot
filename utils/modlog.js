@@ -73,7 +73,7 @@ module.exports = class ModLog {
 			.setColor(ModLog.colour(this.type))
 			.setDescription([
 				`**Moderator:** ${this.moderator.tag} (${this.moderator.id})`,
-				`**Reason:** ${this.reason || `Use \`reason ${this.case}\` to claim this log.`}`
+				`**Reason:** ${this.reason || `No reason specified, write \`reason ${this.case}\` to claim this log.`}`
 			])
 			.setFooter(`Case #${this.case}`)
 			.setTimestamp();
