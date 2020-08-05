@@ -9,7 +9,8 @@ module.exports = class extends Command {
 		super(...args, {
 			aliases: ['up'],
 			description: 'Displays bot uptime.',
-			requiredPermissions: ['EMBED_LINKS']
+			requiredPermissions: ['EMBED_LINKS'],
+			runIn: ['text', 'dm']
 		});
 	}
 
