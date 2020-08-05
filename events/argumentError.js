@@ -11,7 +11,7 @@ module.exports = class extends Event {
 				new MessageEmbed()
 					.setColor('#e74c3c')
 					.setTitle('Invalid Command Syntax')
-					.setDescription(isFunction(command.description) ? description(message.language) : command.description)
+					.setDescription(isFunction(command.description) ? command.description(message.language) : command.description)
 					.addField('**Usage**', `\`\`\`js\n${command.usage.fullUsage(message)}\`\`\``)
 					.addField('**Need help?**', `Use the \`help ${command.name}\` command for more details about this command.`)
 			)
