@@ -14,6 +14,7 @@ module.exports = {
 				.add('muted', 'role')
 				.add('moderator', 'role')
 				.add('filteredWords', 'string', { default: [], array: true })
+				.add('channels', folder => folder.add('modLogs', 'TextChannel'))
 		}
 	}
 };
