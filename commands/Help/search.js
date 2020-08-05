@@ -6,7 +6,8 @@ module.exports = class extends Command {
 		super(...args, {
 			description: 'Look for commands by keywords.',
 			usage: '<Keyword:str>',
-			requiredPermissions: ['EMBED_LINKS']
+			requiredPermissions: ['EMBED_LINKS'],
+			runIn: ['text', 'dm']
 		});
 	}
 
