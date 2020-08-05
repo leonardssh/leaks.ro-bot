@@ -25,7 +25,7 @@ module.exports = class extends Command {
 
 	async run(message, [command]) {
 		if (command) {
-			const { name, description, category, usage, aliases, requiredPermissions } = command;
+			const { name, description, category, usage, requiredPermissions } = command;
 
 			return message.sendEmbed(
 				new MessageEmbed()
