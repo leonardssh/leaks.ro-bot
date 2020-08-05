@@ -10,7 +10,8 @@ module.exports = class extends Command {
 			extendedHelp: language => language.get('COMMAND_EVAL_EXTENDED'),
 			guarded: true,
 			permissionLevel: 10,
-			usage: '<expression:str>'
+			usage: '<expression:str>',
+			runIn: ['text', 'dm']
 		});
 
 		this.timeout = 30000;
