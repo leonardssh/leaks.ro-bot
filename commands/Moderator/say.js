@@ -6,7 +6,7 @@ module.exports = class extends Command {
 			description: 'Send a message to a channel through bot.',
 			runIn: ['text'],
 			permissionLevel: 6,
-			usage: '[channel:channel] <message:string> [...]',
+			usage: '[Channel:channel] <Message:string> [...]',
 			usageDelim: ' '
 		});
 	}
