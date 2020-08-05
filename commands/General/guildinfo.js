@@ -36,11 +36,13 @@ module.exports = class extends Command {
 			'us-west': ':flag_us:'
 		};
 
-		const guildEmojis = message.guild.emojis.cache
-			.map(emoji => `<${emoji.animated == true ? 'a' : ''}:${emoji.name}:${emoji.id}>`)
-			.join(' ')
-			.substring(0, 1024)
-			.replace(/\s\S+[^>]$/, '');
+		const guildEmojis = message.guild.emojis.cache.size
+			? message.guild.emojis.cache
+					.map(emoji => `<${emoji.animated == true ? 'a' : ''}:${emoji.name}:${emoji.id}>`)
+					.join(' ')
+					.substring(0, 1024)
+					.replace(/\s\S+[^>]$/, '')
+			: 'None';
 
 		const guildRoles = message.guild.roles.cache
 			.map(role => role.toString())
