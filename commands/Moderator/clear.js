@@ -7,7 +7,7 @@ module.exports = class extends Command {
 			requiredPermissions: ['MANAGE_MESSAGES'],
 			runIn: ['text'],
 			description: 'Deletes a bulk of specified messages.',
-			usage: '[limit:integer] [link|invite|bots|you|me|upload|user:user]',
+			usage: '[Limit:integer] [link|invite|bots|you|me|upload|user:user]',
 			usageDelim: ' '
 		});
 	}
