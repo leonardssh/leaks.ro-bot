@@ -1,4 +1,5 @@
 const { Event } = require('klasa');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = class extends Event {
 	run(message, command, params, error) {
@@ -7,9 +8,13 @@ module.exports = class extends Event {
 		}
 
 		if (error.message) {
-			message.sendCode('JSON', error.message).catch(err => this.client.emit('wtf', err));
+			message
+				.sendEmbed(new MessageEmbed().setColor('#e74c3c').setTitle('Error').setDescription(`\`\`\`JSON\n${error.message}\`\`\``))
+				.catch(err => this.client.emit('wtf', err));
 		} else {
-			message.sendMessage(error).catch(err => this.client.emit('wtf', err));
+			message
+				.sendEmbed(new MessageEmbed().setColor('#e74c3c').setDescription(`<:valet_nope:716348860389261395> ${error}`))
+				.catch(err => this.client.emit('wtf', err));
 		}
 	}
 };
