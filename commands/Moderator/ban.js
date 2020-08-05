@@ -9,7 +9,7 @@ module.exports = class extends Command {
 			requiredPermissions: ['BAN_MEMBERS'],
 			runIn: ['text'],
 			description: 'Bans the specified user and removes days of their message history.',
-			usage: '<user:user> [days:int{1,7}] [reason:string] [...]',
+			usage: '<User:user> [Days:int{1,7}] [Reason:string] [...]',
 			usageDelim: ' '
 		});
 	}
