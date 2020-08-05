@@ -125,6 +125,14 @@ module.exports = class ModLog {
 				return 15014476;
 			}
 
+			case 'mute': {
+				return 16758059;
+			}
+
+			case 'unmute': {
+				return 5570397;
+			}
+
 			default: {
 				return 16777215;
 			}
