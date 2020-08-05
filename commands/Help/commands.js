@@ -13,7 +13,8 @@ module.exports = class extends Command {
 		super(...args, {
 			aliases: ['cmd', 'cmds'],
 			description: 'Shows you help for all commands.',
-			requiredPermissions: ['EMBED_LINKS']
+			requiredPermissions: ['EMBED_LINKS'],
+			runIn: ['text', 'dm']
 		});
 
 		this.handlers = new Map();
