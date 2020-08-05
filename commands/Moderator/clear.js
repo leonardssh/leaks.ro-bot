@@ -1,4 +1,5 @@
 const { Command } = require('klasa');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = class extends Command {
 	constructor(...args) {
@@ -23,9 +24,18 @@ module.exports = class extends Command {
 		}
 
 		messages = messages.array().slice(0, limit);
+
 		await msg.channel.bulkDelete(messages);
 
-		return msg.send(`Successfully deleted ${messages.length} messages from ${filter === null ? 'everyone' : filter}.`);
+		return msg.sendEmbed(
+			new MessageEmbed()
+				.setColor('#43b581')
+				.setDescription(
+					`<:valet_yeah:716348838289342496> Successfully deleted ${messages.length} messages from ${
+						filter === null ? 'everyone' : filter
+					}.`
+				)
+		);
 	}
 
 	getFilter(msg, filter, user) {
