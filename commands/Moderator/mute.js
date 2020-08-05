@@ -10,7 +10,7 @@ module.exports = class extends Command {
 			requiredPermissions: ['MANAGE_ROLES'],
 			runIn: ['text'],
 			description: 'Mutes a mentioned member.',
-			usage: '<member:member> [when:time] [reason:...string]',
+			usage: '<Member:member> [When:time] [Reason:...string]',
 			usageDelim: ' '
 		});
 	}
