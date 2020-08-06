@@ -9,7 +9,7 @@ module.exports = class extends Command {
 			permissionLevel: 6,
 			requiredPermissions: ['MANAGE_ROLES'],
 			runIn: ['text'],
-			requiredSettings: ['modlog'],
+			requiredSettings: ['channels.modlog'],
 			description: 'Unmutes a mentioned user.',
 			usage: '<Member:member> [Reason:...string]',
 			usageDelim: ' '
