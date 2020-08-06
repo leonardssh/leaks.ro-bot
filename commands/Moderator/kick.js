@@ -15,8 +15,8 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(msg, [member, reason]) {
-		if (member.id === msg.author.id) {
+	async run(message, [member, reason]) {
+		if (member.id === message.author.id) {
 			throw 'Why would you kick yourself?';
 		}
 
@@ -24,7 +24,7 @@ module.exports = class extends Command {
 			throw 'Have I done something wrong?';
 		}
 
-		if (member.roles.highest.position >= msg.member.roles.highest.position) {
+		if (member.roles.highest.position >= message.member.roles.highest.position) {
 			throw 'You cannot kick this user.';
 		}
 
@@ -34,21 +34,21 @@ module.exports = class extends Command {
 
 		await member.kick(reason);
 
-		if (msg.guild.settings.channels.modlog) {
-			const log = new ModLog(msg.guild);
+		if (message.guild.settings.channels.modlog) {
+			const log = new ModLog(message.guild);
 
 			log.type = 'kick';
-			log.moderator = msg.author;
+			log.moderator = message.author;
 			log.user = member.user;
 			log.reason = reason;
 			log.send();
 		}
 
-		return msg.sendEmbed(
+		return message.sendEmbed(
 			new MessageEmbed()
 				.setColor('#43b581')
 				.setDescription(
-					`<:valet_yeah:716348838289342496> **${msg.author.tag}** kicked **${member.user.tag}**, reason: ${
+					`<:valet_yeah:716348838289342496> **${message.author.tag}** kicked **${member.user.tag}**, reason: ${
 						reason || 'No reason.'
 					}`
 				)
