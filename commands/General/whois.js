@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
+			aliases: ['userinfo', 'ui'],
 			description: 'Displays the account details of the specified user.',
 			requiredPermissions: ['EMBED_LINKS'],
 			runIn: ['text']
