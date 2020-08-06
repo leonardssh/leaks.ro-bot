@@ -2,14 +2,14 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = class ModLog {
 	constructor(guild) {
-		this.client = guild.client;
 		this.guild = guild;
 
 		this._type = null;
 		this._user = null;
 		this._moderator = null;
 		this._reason = null;
-		this._case = null;
+
+		this.case = null;
 	}
 
 	set type(type) {
