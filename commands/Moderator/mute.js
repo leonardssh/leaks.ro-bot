@@ -9,7 +9,7 @@ module.exports = class extends Command {
 			permissionLevel: 6,
 			requiredPermissions: ['MANAGE_ROLES'],
 			runIn: ['text'],
-			requiredSettings: ['modlog'],
+			requiredSettings: ['channels.modlog'],
 			description: 'Mutes a mentioned member.',
 			usage: '<Member:member> [When:time] [Reason:...string]',
 			usageDelim: ' '
