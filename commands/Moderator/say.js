@@ -11,7 +11,7 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(msg, [channel = msg.channel, ...message]) {
+	async run(message, [channel = message.channel, ...message]) {
 		if (!channel.postable) {
 			throw `I am not allowed to send messages to this channel.`;
 		}
