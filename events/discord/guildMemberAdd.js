@@ -1,5 +1,5 @@
 const { Event } = require('klasa');
-const { MessageEmbed } = require('discord.js');
+const { welcomer } = require('../../utils/welcomer');
 
 module.exports = class extends Event {
 	async run(member) {
@@ -11,5 +11,13 @@ module.exports = class extends Event {
 		}
 
 		await member.roles.add(guild.settings.member);
+
+		const welcomeChannel = guild.channels.cache.get(guild.settings.channels.welcome);
+
+		if (!welcomeChannel) {
+			return;
+		}
+
+		return welcomer(welcomeChannel, member);
 	}
 };

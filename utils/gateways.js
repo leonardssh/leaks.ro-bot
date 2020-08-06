@@ -15,7 +15,7 @@ module.exports = {
 				.add('moderator', 'role')
 				.add('member', 'role')
 				.add('filteredWords', 'string', { default: [], array: true })
-				.add('channels', folder => folder.add('modlog', 'TextChannel'))
+				.add('channels', folder => folder.add('modlog', 'TextChannel').add('welcome', 'TextChannel'))
 				.add('modlogs', 'any', { array: true })
 		}
 	}
