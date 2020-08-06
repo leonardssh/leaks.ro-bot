@@ -9,6 +9,7 @@ module.exports = class extends Command {
 			permissionLevel: 6,
 			requiredPermissions: ['KICK_MEMBERS'],
 			runIn: ['text'],
+			requiredSettings: ['modlog'],
 			description: 'Kicks a mentioned user.',
 			usage: '<Member:member> [Reason:...string]',
 			usageDelim: ' '
