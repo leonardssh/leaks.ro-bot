@@ -12,16 +12,16 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(msg, [casenum]) {
-		const log = msg.guild.settings.modlogs[casenum];
+	async run(message, [casenum]) {
+		const log = message.guild.settings.modlogs[casenum];
 
 		if (!log) {
-			throw `${msg.author}, there is no modlog under that case.`;
+			throw `${message.author}, there is no modlog under that case.`;
 		}
 
 		const [user, moderator] = await Promise.all([this.client.users.fetch(log.user), this.client.users.fetch(log.moderator)]);
 
-		return msg.sendEmbed(
+		return message.sendEmbed(
 			new MessageEmbed()
 				.setAuthor(
 					`[${log.type.toUpperCase()}] ${user.tag} (${user.id})`,
