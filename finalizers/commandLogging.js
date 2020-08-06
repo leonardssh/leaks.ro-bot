@@ -3,6 +3,7 @@ const { Finalizer, Colors } = require('klasa');
 module.exports = class extends Finalizer {
 	constructor(...args) {
 		super(...args);
+
 		this.reprompted = [new Colors({ background: 'blue' }), new Colors({ background: 'red' })];
 		this.user = new Colors({ background: 'yellow', text: 'black' });
 		this.shard = new Colors({ background: 'cyan', text: 'black' });
