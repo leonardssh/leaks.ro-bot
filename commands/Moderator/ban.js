@@ -9,6 +9,7 @@ module.exports = class extends Command {
 			permissionLevel: 6,
 			requiredPermissions: ['BAN_MEMBERS'],
 			runIn: ['text'],
+			requiredSettings: ['modlog'],
 			description: 'Bans the specified user and removes days of their message history.',
 			usage: '<User:user> [Days:int{1,7}] [Reason:string] [...]',
 			usageDelim: ' '
