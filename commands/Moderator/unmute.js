@@ -15,32 +15,32 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(msg, [member, reason]) {
-		if (member.roles.highest.position >= msg.member.roles.highest.position) {
+	async run(message, [member, reason]) {
+		if (member.roles.highest.position >= message.member.roles.highest.position) {
 			throw 'You cannot unmute this user.';
 		}
 
-		if (!member.roles.cache.has(msg.guild.settings.muted)) {
+		if (!member.roles.cache.has(message.guild.settings.muted)) {
 			throw 'This user is not muted.';
 		}
 
-		await member.roles.remove(msg.guild.settings.muted);
+		await member.roles.remove(message.guild.settings.muted);
 
-		if (msg.guild.settings.channels.modlog) {
-			const log = new ModLog(msg.guild);
+		if (message.guild.settings.channels.modlog) {
+			const log = new ModLog(message.guild);
 
 			log.type = 'unmute';
-			log.moderator = msg.author;
+			log.moderator = message.author;
 			log.user = member.user;
 			log.reason = reason;
 			log.send();
 		}
 
-		return msg.sendEmbed(
+		return message.sendEmbed(
 			new MessageEmbed()
 				.setColor('#43b581')
 				.setDescription(
-					`<:valet_yeah:716348838289342496> **${msg.author.tag}** unmuted **${member.user.tag}**, reason: ${
+					`<:valet_yeah:716348838289342496> **${message.author.tag}** unmuted **${member.user.tag}**, reason: ${
 						reason || 'No reason.'
 					}`
 				)
