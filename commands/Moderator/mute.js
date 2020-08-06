@@ -15,8 +15,8 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(msg, [member, when, reason]) {
-		if (member.id === msg.author.id) {
+	async run(message, [member, when, reason]) {
+		if (member.id === message.author.id) {
 			throw 'Why would you mute yourself?';
 		}
 
@@ -24,40 +24,40 @@ module.exports = class extends Command {
 			throw 'Have I done something wrong?';
 		}
 
-		if (member.roles.highest.position >= msg.member.roles.highest.position) {
+		if (member.roles.highest.position >= message.member.roles.highest.position) {
 			throw 'You cannot mute this user.';
 		}
 
-		if (member.roles.cache.has(msg.guild.settings.muted)) {
+		if (member.roles.cache.has(message.guild.settings.muted)) {
 			throw 'The member is already muted.';
 		}
 
-		await member.roles.add(msg.guild.settings.muted);
+		await member.roles.add(message.guild.settings.muted);
 
 		if (when) {
 			await this.client.schedule.create('unmute', when, {
 				data: {
-					guild: msg.guild.id,
+					guild: message.guild.id,
 					user: member.id
 				}
 			});
 		}
 
-		if (msg.guild.settings.channels.modlog) {
-			const log = new ModLog(msg.guild);
+		if (message.guild.settings.channels.modlog) {
+			const log = new ModLog(message.guild);
 
 			log.type = 'mute';
-			log.moderator = msg.author;
+			log.moderator = message.author;
 			log.user = member.user;
 			log.reason = reason;
 			log.send();
 		}
 
-		return msg.sendEmbed(
+		return message.sendEmbed(
 			new MessageEmbed()
 				.setColor('#43b581')
 				.setDescription(
-					`<:valet_yeah:716348838289342496> **${msg.author.tag}** muted **${member.user.tag}**${
+					`<:valet_yeah:716348838289342496> **${message.author.tag}** muted **${member.user.tag}**${
 						when ? ` for **${Duration.toNow(when)}**` : ''
 					}, reason: ${reason || 'No reason.'}`
 				)
