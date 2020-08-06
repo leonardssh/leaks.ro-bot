@@ -15,8 +15,8 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(msg, [user, days = 1, reason]) {
-		if (user.id === msg.author.id) {
+	async run(message, [user, days = 1, reason]) {
+		if (user.id === message.author.id) {
 			throw 'Why would you ban yourself?';
 		}
 
@@ -24,10 +24,10 @@ module.exports = class extends Command {
 			throw 'Have I done something wrong?';
 		}
 
-		const member = await msg.guild.members.fetch(user).catch(() => null);
+		const member = await message.guild.members.fetch(user).catch(() => null);
 
 		if (member) {
-			if (member.roles.highest.position >= msg.member.roles.highest.position) {
+			if (member.roles.highest.position >= message.member.roles.highest.position) {
 				throw 'You cannot ban this user.';
 			}
 
@@ -42,24 +42,24 @@ module.exports = class extends Command {
 			options.reason = reason;
 		}
 
-		await msg.guild.members.ban(user, options);
-		await msg.guild.members.unban(user, 'Softban released.');
+		await message.guild.members.ban(user, options);
+		await message.guild.members.unban(user, 'Softban released.');
 
-		if (msg.guild.settings.channels.modlog) {
-			const log = new ModLog(msg.guild);
+		if (message.guild.settings.channels.modlog) {
+			const log = new ModLog(message.guild);
 
 			log.type = 'softban';
-			log.moderator = msg.author;
+			log.moderator = message.author;
 			log.user = user;
 			log.reason = reason;
 			log.send();
 		}
 
-		return msg.sendEmbed(
+		return message.sendEmbed(
 			new MessageEmbed()
 				.setColor('#43b581')
 				.setDescription(
-					`<:valet_yeah:716348838289342496> **${msg.author.tag}** softbanned **${member.user.tag}**${
+					`<:valet_yeah:716348838289342496> **${message.author.tag}** softbanned **${member.user.tag}**${
 						days ? ` and removes **${days}** days of their message history` : ''
 					}, reason: **${reason || 'No reason.'}**`
 				)
