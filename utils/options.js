@@ -27,5 +27,9 @@ module.exports = {
 	disabledCorePieces: ['commands', 'languages'],
 	gateways,
 	permissionLevels,
-	readyMessage: client => `Successfully initialized. Ready to serve ${client.guilds.cache.size} guilds.`
+	readyMessage: client => `Successfully initialized. Ready to serve ${client.guilds.cache.size} guilds.`,
+	autoReconnect: true,
+	messageCacheMaxSize: 10,
+	messageCacheLifetime: 30,
+	messageSweepInterval: 35
 };
