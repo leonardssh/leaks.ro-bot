@@ -7,6 +7,7 @@ module.exports = class extends Command {
 		super(...args, {
 			description: 'Displays a random joke.',
 			runIn: ['text'],
+			aliases: ['gluma', 'glumitza', 'dumitza'],
 			subcommands: true,
 			usage: '[add|pt] [User:user] [Duma:...string]',
 			usageDelim: ' '
