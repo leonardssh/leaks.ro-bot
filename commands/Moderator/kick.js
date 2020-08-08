@@ -11,12 +11,18 @@ module.exports = class extends Command {
 			runIn: ['text'],
 			requiredSettings: ['channels.modlog'],
 			description: 'Kicks a mentioned user.',
-			usage: '<Member:member> [Reason:...string]',
+			usage: '<User:user> [Reason:...string]',
 			usageDelim: ' '
 		});
 	}
 
-	async run(message, [member, reason]) {
+	async run(message, [user, reason]) {
+		const member = await message.guild.members.fetch(user).catch(() => null);
+
+		if (!member) {
+			throw `${message.author}, this user is no longer on the server.`;
+		}
+
 		if (member.id === message.author.id) {
 			throw 'Why would you kick yourself?';
 		}
@@ -40,7 +46,7 @@ module.exports = class extends Command {
 
 			log.type = 'kick';
 			log.moderator = message.author;
-			log.user = member.user;
+			log.user = user;
 			log.reason = reason;
 			log.send();
 		}
