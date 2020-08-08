@@ -1,5 +1,4 @@
 const { Command } = require('klasa');
-const { MessageEmbed } = require('discord.js');
 const { Poll } = require('../../utils/poll');
 
 module.exports = class extends Command {
