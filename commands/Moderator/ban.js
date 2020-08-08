@@ -23,9 +23,13 @@ module.exports = class extends Command {
 
 		if (!member) {
 			throw `${message.author}, this user is no longer on the server.`;
-		} else if (member.roles.highest.position >= message.member.roles.highest.position) {
+		}
+
+		if (member.roles.highest.position >= message.member.roles.highest.position) {
 			throw `${message.author}, you may not execute this command on this member.`;
-		} else if (member.bannable === false) {
+		}
+
+		if (member.bannable === false) {
 			throw `${message.author}, I am not able to ban this member, sorry.`;
 		}
 
