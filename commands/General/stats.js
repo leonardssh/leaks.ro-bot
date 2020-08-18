@@ -45,7 +45,11 @@ module.exports = class extends Command {
                 **Developer:** [Leonard#6666](https://leonard.pw)`,
 					true
 				)
-				.addField(':link: **USEFUL LINKS:**', stripIndents`**Website:** [click here](https://leaks.ro)\n`, true)
+				.addField(
+					':link: **USEFUL LINKS:**',
+					stripIndents`**Website:** [click here](https://leaks.ro)\n**Source code:** [click here](https://github.com/Leaks-Romania/bot)`,
+					true
+				)
 
 				.setThumbnail(this.client.user.avatarURL({ dynamic: true, size: 2048, format: 'png' }))
 				.setFooter(`Created ${creation.toFixed(0)} days ago`)
