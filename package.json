@@ -1,19 +1,19 @@
 {
-	"name": "leaks.ro-rewrite",
+	"name": "bot",
 	"version": "1.0.0",
 	"description": "Created especially for the Leaks Romania community.",
 	"main": "index.js",
 	"scripts": {},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Leaks-Romania/leaks.ro-rewrite.git"
+		"url": "git+https://github.com/Leaks-Romania/bot.git"
 	},
 	"author": "LeonardSSH <leonardssh22@gmail.com> (https://leonard.pw)",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Leaks-Romania/leaks.ro-rewrite/issues"
+		"url": "https://github.com/Leaks-Romania/bot/issues"
 	},
-	"homepage": "https://github.com/Leaks-Romania/leaks.ro-rewrite#readme",
+	"homepage": "https://github.com/Leaks-Romania/bot#readme",
 	"dependencies": {
 		"canvas": "^2.6.1",
 		"common-tags": "^1.8.0",
